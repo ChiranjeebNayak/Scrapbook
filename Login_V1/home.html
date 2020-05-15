@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+      integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Home</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBIkviWay63-GDTLVtj0EZ6MIHXsijVEIs",
+        authDomain: "scrapbook-6f898.firebaseapp.com",
+        databaseURL: "https://scrapbook-6f898.firebaseio.com",
+        projectId: "scrapbook-6f898",
+        storageBucket: "scrapbook-6f898.appspot.com",
+        messagingSenderId: "1061249736539",
+        appId: "1:1061249736539:web:a84474fdc8efb2d136447e",
+        measurementId: "G-341B6R7CLK",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/popup.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/styleHome.css" />
+    <script src="js/home.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!--===============================================================================================-->
+    <style>
+      button {
+        background-color: mediumaquamarine;
+        height: 3%;
+        width: 35%;
+        border-radius: 3px;
+        border-color: black;
+      }
+      /*----Footer End-------*/
+      @media only screen and (max-width: 600px) {
+        nav {
+          width: 100%;
+        }
+        footer {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <div class="”main-container”">
+    <body>
+      <!-- Image and text -->
+      <!--    Navigation         -->
+
+      <!--navigation bar for scrapbook -->
+      <nav class="container-fluid d-flex">
+        <img src="images/book.png" alt="book.png" />
+        <h1>ScrapBook</h1>
+
+        <div class="logout d-flex align-items-center">
+          <a type="button" onclick="logout()">Logout</a>
+        </div>
+      </nav>
+
+      <!--end navigation bar for scrapbook  -->
+      <main>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4 d-flex justify-content-center">
+              <a type="button" onclick="sharelink()" class="trigger_popup_fricc"
+                ><i class="fas fa-share-alt"></i
+              ></a>
+              <p class="icon-text">Let others write about you</p>
+            </div>
+
+            <div class="hover_bkgr_fricc">
+              <span class="helper"></span>
+              <div>
+                <div class="popupCloseButton">&times;</div>
+                <input type="text" id="weblink" class="text2" /><input
+                  type="button"
+                  onclick="copy()"
+                  value="copy"
+                  id="popupinput"
+                />
+                <p>
+                  copy the link and share to your friends and collect your
+                  memories :-)
+                </p>
+              </div>
+            </div>
+
+            <div class="col-4 d-flex justify-content-center">
+              <a type="button" onclick="viewresponse()"
+                ><i class="fas fa-book-reader"></i
+              ></a>
+              <p class="icon-text">View responses</p>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <a href="aboutus.html"><i class="fas fa-fa-info"></i></a>
+              <p class="icon-text">About us</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!--  Footer  -->
+      <footer>
+        <div class="footer-copyright text-center py-3" id="copy">
+          Copyright &copy; 2020 All rights reserved | Powered by :
+          <a
+            href="https://www.linkedin.com/in/chiranjeeb-nayak-b6218b182/"
+            class="name"
+          >
+            CHIRANJEEB NAYAK</a
+          >
+        </div>
+      </footer>
+
+      <!--X---  Footer --X-->
+    </body>
+  </div>
+</html>

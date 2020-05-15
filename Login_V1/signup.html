@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sign Up</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/signup.js"></script>
+<!--===============================================================================================-->
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBIkviWay63-GDTLVtj0EZ6MIHXsijVEIs",
+    authDomain: "scrapbook-6f898.firebaseapp.com",
+    databaseURL: "https://scrapbook-6f898.firebaseio.com",
+    projectId: "scrapbook-6f898",
+    storageBucket: "scrapbook-6f898.appspot.com",
+    messagingSenderId: "1061249736539",
+    appId: "1:1061249736539:web:a84474fdc8efb2d136447e",
+    measurementId: "G-341B6R7CLK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<style>
+    #loading{
+		display:none;
+	}
+	
+  </style>
+</head>
+<body>
+	
+	   <!--navigation bar for scrapbook -->
+	   <nav class="container-fluid d-flex">
+			
+			  <img src="images/book.png" alt="book.png" />
+			  <h1>ScrapBook</h1>
+		
+				<img class="club" src="images/club.png" alt="club excel" />
+		
+		  </nav>
+    <!--end navigation bar for scrapbook  -->
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="images/scrapbook.png" alt="IMG">
+				</div>
+
+			<form class="login100-form validate-form">
+					<span class="login100-form-title">
+						User Signup
+                    </span>
+                    
+                    
+					<div class="wrap-input100">
+						<input class="input100" type="text"  placeholder="Your Name" id="name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100">
+						<input class="input100" type="email" name="email" placeholder=" Email" id="email">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100">
+						<input class="input100" type="password"  placeholder="Password" id="password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                    </div>
+                    
+                    <div class="wrap-input100">
+						<input class="input100" type="password"  placeholder="Repassword" id="repassword">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					
+
+				<div id="loginButton"class="container-login100-form-btn">
+					<butinton class="login100-form-btn" onclick="return validation()">
+						Sign Up</button>
+						
+					</div>
+					<div id="loading" class="text-center p-t-10">
+						<image src="loading.gif" height="50px" width="50px">
+					  </div>
+
+					<div class="text-center p-t-10">
+						<span class="txt1">
+							Already have account?
+						</span>
+						<a class="txt2" href="index.html">
+							Login
+						</a>
+						
+					</div>
+
+				</form> 
+			</div>
+		</div>
+	</div>
+	
+ <!--  Footer  -->
+ <footer class="space">
+	<div class="footer-copyright text-center py-3" id="copy">
+	  Copyright &copy; 2020 All rights reserved | Powered by :
+	  <a
+		href="https://www.linkedin.com/in/chiranjeeb-nayak-b6218b182/"
+		class="name"
+	  >
+		CHIRANJEEB NAYAK</a
+	  >
+	</div>
+  </footer>
+  <!--X---  Footer --X-->
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+
+
+</body>
+
+</html>

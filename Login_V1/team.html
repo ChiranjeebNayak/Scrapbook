@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-image: linear-gradient(to bottom, #ffffff, #cdcdd2);
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin: 8px;
+      }
+
+      .about-section {
+        padding: 50px;
+        text-align: center;
+        background-color: #424146;
+        color: white;
+        margin: 15px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .container {
+        padding: 0 16px;
+      }
+
+      .container::after,
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .title {
+        color: grey;
+      }
+
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #6f6474;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .button:hover {
+        background-color: #555;
+      }
+      .name {
+        color: #3d4c53;
+      }
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="about-section">
+      <h1>OUR TEAM</h1>
+      <p>
+        Coming together is a beginning, staying together is progress, and
+        working together is success.
+      </p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img
+            src="images/e1.jpg"
+            alt="Chiranjeeb Nayak"
+            style="width: 100%; height: 277px;"
+          />
+          <div class="container">
+            <h2 class="name">Chiranjeeb Nayak</h2>
+            <p class="title">Founder</p>
+            <p>chiranjeebnayak.37@gmail.com</p>
+            <p><button class="button" onclick="link1()">Contact</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img
+            src="images/img2.jpg"
+            alt="Vaibhav Kejriwal"
+            style="width: 100%; height: 277px;"
+          />
+          <div class="container">
+            <h2 class="name">Vaibhav Kejriwal</h2>
+            <p class="title">Director</p>
+            <p>VaibhavKejriwala98@gmail.com</p>
+            <p><button class="button" onclick="link2()">Contact</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img
+            src="images/img3.jpeg"
+            alt="Abihsek Kumar"
+            style="width: 100%; height: 277px;"
+          />
+          <div class="container">
+            <h2 class="name">Abishek Kumar</h2>
+            <p class="title">Backend Developer,Android Developer</p>
+            <p>Abishek.ard@gmail.com</p>
+            <p><button class="button" onclick="link3()">Contact</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img
+            src="images/img4.jpeg"
+            alt="Amisha Sahu"
+            style="width: 100%; height: 277px;"
+          />
+          <div class="container">
+            <h2 class="name">Amisha Sahu</h2>
+            <p class="title">UI Designer</p>
+            <p>amisha.sahu123@gmail.com</p>
+            <p><button class="button" onclick="link4()">Contact</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img
+            src="images/img5.jpeg"
+            alt="Ashish"
+            style="width: 100%; height: 277px;"
+          />
+          <div class="container">
+            <h2 class="name">Ashish Raj</h2>
+            <p class="title">Designer</p>
+            <p>Ashishrajbhagat@gmail.com</p>
+            <p><button class="button" onclick="link5()">Contact</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img
+            src="images/img6.jpeg"
+            alt="Aditya"
+            style="width: 100%; height: 277px;"
+          />
+          <div class="container">
+            <h2 class="name">Aditya Agarwal</h2>
+            <p class="title">Backend Developer</p>
+            <p>aaditya650@gmail.com</p>
+            <p><button class="button" onclick="link6()">Contact</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+function link1(){
+window.location.href="https://www.linkedin.com/in/chiranjeeb-nayak-b6218b182/"
+}
+function link2(){
+window.location.href="https://www.linkedin.com/in/vaibhav98/"
+}
+function link3(){
+window.location.href="https://www.linkedin.com/in/abishek-kumar-b909201a0/"
+}
+function link4(){
+window.location.href="https://www.linkedin.com/in/amisha-sahu-675783168/"
+}
+function link5(){
+window.location.href="https://www.linkedin.com/in/ashish-raj-61a476155/"
+}
+function link6(){
+window.location.href="https://www.linkedin.com/in/aditya-agarwal-911623168/"
+
+}
+
+  </script>
+</html>

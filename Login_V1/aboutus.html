@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us</title>
+<link rel="stylesheet" href="css/about.css">
+<script src="js/about.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-storage.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAfBtV9EYBpQuY432p9eVUQ8hF1qRvzVAk",
+    authDomain: "scrapbook-feeedback.firebaseapp.com",
+    databaseURL: "https://scrapbook-feeedback.firebaseio.com",
+    projectId: "scrapbook-feeedback",
+    storageBucket: "scrapbook-feeedback.appspot.com",
+    messagingSenderId: "98545308706",
+    appId: "1:98545308706:web:88d08cd1c636cc13f5a67b",
+    measurementId: "G-V60BS95T9H"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+</head>
+<div class="main-container">
+<body>
+
+<div class="about-section" class="hero-image">
+  <h1 class="para">About Us</h1>
+  <p class="para1" >Memories are like sand castles - only by putting them in a safe place can you prevent them from washing away.</p>
+</div>
+<!--
+<h2 style="text-align:center">Our Team</h2>-->
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="images/e1.jpg" alt="chiranjeeb" style="width:100%">
+      <div class="container">
+        <h2>Chiranjeeb Nayak</h2>
+        <p class="title">Founder,ScrapBook</p>
+        <p>Sr.Fullstack Devloper,2+ Years of Web Devlopment Expertise,Back-end Devloper,Competitive Pogrammer,Campuss ambasssador of Internshala</p>
+        <p><strong>Email :</strong>ChiranjeebNayak.37@gmail.com</p>
+       <!-- <p><strong>Contact No:</strong>+91 6372117831</p>-->
+        <p><button class="button" onclick="linkedin()">Contact</button></p>
+        <p><button class="button" onclick="team()">Our Team</button></p>
+      </div>
+    </div>
+  </div>
+  
+<div class="column">
+    <h1>Get In Touch</h1>
+    <form >
+      <label for="fname">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name..">
+         <label for="fname">Email Id</label>
+      <input type="email" id="email" name="name" placeholder="Your name..">
+      
+      <label for="subject">Message</label>
+      <textarea id="message" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+      <input type="button" value="Submit"onclick="return feed()" ><br> 
+    </form>
+  </div>
+</div>
+</div>
+
+ <footer>
+      <div class="container-fluid">
+        <div class="row1">
+          <p id="copyrighttxt">
+            Copyright &copy; 2020 All rights reserved | Powered by :
+           <a href="https://www.linkedin.com/in/chiranjeeb-nayak-b6218b182/"> <span class="club">CHIRANJEEB NAYAK</span></a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+</body>
+</div>
+</html>
