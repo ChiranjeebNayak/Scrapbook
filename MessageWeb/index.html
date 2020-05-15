@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Scrap Book</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+<!--===============================================================================================-->
+
+<style>
+	#loading{
+		display: none;
+	}
+
+ </style>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+
+<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+	  apiKey: "AIzaSyBIkviWay63-GDTLVtj0EZ6MIHXsijVEIs",
+	  authDomain: "scrapbook-6f898.firebaseapp.com",
+	  databaseURL: "https://scrapbook-6f898.firebaseio.com",
+	  projectId: "scrapbook-6f898",
+	  storageBucket: "scrapbook-6f898.appspot.com",
+	  messagingSenderId: "1061249736539",
+	  appId: "1:1061249736539:web:a84474fdc8efb2d136447e",
+	  measurementId: "G-341B6R7CLK"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+  </script>
+  
+</head>
+<div class="main-container">
+	<body>
+		<!--navigation bar for scrapbook -->
+		<nav class="container-fluid d-flex">
+		  <img src="images/book.png" alt="book.png" />
+		  <h1>ScrapBook</h1>
+	
+		  <img class="club" src="images/club.png" alt="club excel" />
+		</nav>
+		<!--end navigation bar for scrapbook  -->
+		<div class="limiter">
+		  <div class="container-login100">
+			<div class="wrap-login100">
+			  <div class="login100-pic js-tilt" data-tilt>
+				<img src="images/scrapbook.png" alt="IMG" />
+			  </div>
+	
+			  <form class="login100-form validate-form">
+				<span class="login100-form-title">
+				  Member Login
+			   <span>
+				<br> <p class="login100-form-title1">
+	Get your friends to write about moments you cherished together.
+	<br>
+	We will create a Scrapbook out of it for you!
+	<br>
+	Happy  Scrapping 😇
+	 </p>
+				<div class="wrap-input100">
+				  <input
+					class="input100"
+					type="email"
+					name="email"
+					placeholder=" Email"
+					id="user"
+				  />
+				  <span class="focus-input100"></span>
+				  <span class="symbol-input100">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+				  </span>
+				</div>
+	
+				<div class="wrap-input100">
+				  <input
+					class="input100"
+					type="password"
+					name="pass"
+					placeholder="Password"
+					id="password"
+				  />
+				  <span class="focus-input100"></span>
+				  <span class="symbol-input100">
+					<i class="fa fa-lock" aria-hidden="true"></i>
+				  </span>
+				</div>
+	
+				<div class="container-login100-form-btn">
+				  <input
+					type="button"
+					class="login100-form-btn"
+					id="loginButton"
+					onclick="return validation()"
+					value="login"
+				  />
+				</div>
+				<div id="loading" class="text-center p-t-10">
+				  <image src="loading.gif" height="50px" width="50px">
+				  </div>
+				<div class="text-center p-t-10">
+				  <a class="txt2" onclick="resetpwd()" class="pwd">
+					<strong>Forgot Password?</strong>
+				  </a>
+				</div>
+	
+				<div class="text-center p-t-90">
+				  <a class="txt2" href="signup.html">
+					Create your Account
+					<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+				  </a>
+				</div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	
+		<!--  Footer  -->
+		<footer>
+		 
+		   
+			<a
+			  href="aboutus.html"
+			  class="name"
+			>
+			  ABOUT US</a
+			>
+	</footer>
+		<!--X---  Footer --X-->
+	
+		<!--===============================================================================================-->
+		<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+		<!--===============================================================================================-->
+		<script src="vendor/bootstrap/js/popper.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<!--===============================================================================================-->
+		<script src="vendor/select2/select2.min.js"></script>
+		<!--===============================================================================================-->
+		<script src="vendor/tilt/tilt.jquery.min.js"></script>
+		<script>
+		  $(".js-tilt").tilt({
+			scale: 1.1,
+		  });
+		</script>
+		<!--===============================================================================================-->
+	  </body>
+</div>
+<script>
+	   var link=window.location.href;
+    var idd=link.slice(-28);
+    console.log("friend id to store == "+idd);
+  
+
+	var errorMessage;
+   function validation()
+   {  
+	   var ui=document.getElementById("user").value;
+	   var pd=document.getElementById("password").value;
+	   
+	   
+	   if(ui=="")
+	   {
+		 alert("Please Enter your Username");
+		// document.write("no name");  
+		return false;
+	   }
+	   var favoritemovie = idd;
+      console.log(favoritemovie+"== store idd ");
+    sessionStorage.setItem("favoriteMovie", favoritemovie);
+	   
+	   if(pd=="")
+	   {
+		 alert("Please Enter your Password");
+		// document.write("no name");
+		return false;
+	   }
+	   else
+	   {	
+		   
+		 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+   .then(function() {
+	 // Existing and future Auth states are now persisted in the current
+	 // session only. Closing the window would clear any existing state even
+	 // if a user forgets to sign out.
+	 // ...
+	 // New sign-in will be persisted with session persistence.
+	 return firebase.auth().signInWithEmailAndPassword(email, password);
+   })
+   .catch(function(error) {
+	 // Handle Errors here.
+	 var errorCode = error.code;
+	 var errorMessage = error.message;
+   });
+ 
+ firebase.auth().signInWithEmailAndPassword(ui, pd).then(function() {
+	 var user = firebase.auth().currentUser;
+	// alert(user);
+ 
+	 window.location.href="message.html";
+	 return true;
+ 
+ }).catch(function(error) {
+   // Handle Errors here.
+   var errorCode = error.code;
+	errorMessage = error.message;
+   // ...
+   alert(error);
+   return false;
+		 });
+ 
+	  
+	 }
+ 
+   } 
+   
+   function resetpwd()
+   { var ui=document.getElementById("user").value;
+	 var auth = firebase.auth();
+ var emailAddress = ui;
+ 
+ auth.sendPasswordResetEmail(emailAddress).then(function() {
+   // Email sent.
+   alert("reset password link sent to you mail.");
+ }).catch(function(error) {
+   // An error happened.
+   alert(error);
+ });
+ 
+   }
+   function facebook()
+	 {
+	   var provider = new firebase.auth.FacebookAuthProvider();
+	   provider.addScope('user_birthday');
+	   firebase.auth().signInWithPopup(provider).then(function(result) {
+   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+   var token = result.credential.accessToken;
+   // The signed-in user info.
+   var user = result.user;
+   alert("You have signed up successfullly.");
+   window.location.href="message.html";
+   // ...
+ }).catch(function(error) {
+   // Handle Errors here.
+   var errorCode = error.code;
+   var errorMessage = error.message;
+   alert(errorMessage);
+   // The email of the user's account used.
+   var email = error.email;
+   // The firebase.auth.AuthCredential type that was used.
+   var credential = error.credential;
+   // ...
+ });
+	   
+	 }
+ 
+	 function twitter()
+	 {
+	   var provider = new firebase.auth.TwitterAuthProvider();
+	   firebase.auth().signInWithPopup(provider).then(function(result) {
+   // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+   // You can use these server side with your app's credentials to access the Twitter API.
+   var token = result.credential.accessToken;
+   var secret = result.credential.secret;
+   // The signed-in user info.
+   var user = result.user;
+   alert("You have signed up successfullly.");
+   window.location.href="message.html";
+ 
+   // ...
+ }).catch(function(error) {
+   // Handle Errors here.
+   var errorCode = error.code;
+   var errorMessage = error.message;
+   alert(errorMessage);
+   // The email of the user's account used.
+   var email = error.email;
+   // The firebase.auth.AuthCredential type that was used.
+   var credential = error.credential;
+   // ...
+ });
+	 }
+   
+ </script>
+</html>

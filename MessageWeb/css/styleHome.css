@@ -1,0 +1,96 @@
+:root{
+  --bggradient:linear-gradient(to bottom,#dd2476,#ff512f);
+}
+body{
+  background: var(--bggradient);
+}
+
+/**----Header------*/
+nav {
+  display: flex;
+  height: 9vh;
+}
+nav img {
+  width: 60px;
+  height: 60px;
+  margin-left: 3rem;
+}
+nav a {
+  display: block;
+  font-size: 1.5rem;
+  color: whitesmoke;
+  text-decoration: none;
+  font-weight: 600;
+  align-self: center;
+  padding-left: 3rem;
+}
+nav .logout{
+
+}
+nav .logout a{
+  color: white;
+  padding: 5px 30px;
+  margin-right: 10px;
+  background: #0984e3;
+  border-radius: 35px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+
+}
+
+/*------X----Header------X------*/
+
+/*-----Main--------*/
+main{
+  height: 81vh;  
+}
+.row{
+  height: 81vh;
+  justify-content: space-around;
+  align-items: center;
+}
+main .container-fluid .row .col-4 a{
+  font-size: 5rem;
+  color: white;
+  margin: 0px !important;
+  padding: 0px;
+}
+main .container-fluid .row .col-4{
+  flex-direction: column;
+  align-items: center;
+  text-transform: capitalize;
+  flex-basis: 20%;
+}
+main .container-fluid .row .col-4 .icon-text{
+  font-size: 1rem;
+  margin: 0px;
+  padding: 0px;
+  font-weight: 600;
+  color: #262626;
+  text-align: center;
+  text-shadow: 0px 2px 10px rgba(0,0,0,0.3);
+}
+
+
+
+
+/*-------Footer---------*/
+footer{
+  background: #262626;
+  text-align: center;
+  color: white;
+
+}
+footer .container-fluid{
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+.club{
+  color:#c0392b;
+  font-weight: 600;
+  letter-spacing: 3px;
+
+}
+/*-----X---footer-----X----*/

@@ -1,0 +1,250 @@
+<html lang="en">
+  <head>
+     <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+   
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+      integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+      crossorigin="anonymous"
+    ></script>
+    <!--<script src="./message.js" defer></script> -->
+    <title>Message</title>
+    <link rel="stylesheet" type="text/css" href="./messageStyle.css" />
+ 
+    
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-storage.js"></script>
+  <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBIkviWay63-GDTLVtj0EZ6MIHXsijVEIs",
+    authDomain: "scrapbook-6f898.firebaseapp.com",
+    databaseURL: "https://scrapbook-6f898.firebaseio.com",
+    projectId: "scrapbook-6f898",
+    storageBucket: "scrapbook-6f898.appspot.com",
+    messagingSenderId: "1061249736539",
+    appId: "1:1061249736539:web:a84474fdc8efb2d136447e",
+    measurementId: "G-341B6R7CLK"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+  </head>
+    <div class="main-container" >
+  <body>
+    <nav class="container-fluid d-flex">
+			
+			  <img src="images/book.png" alt="book.png" />
+			  <h1>ScrapBook</h1>
+		
+				<img class="clublogo" src="images/club.png" alt="club excel" />
+		
+		  </nav>
+    <main>
+      <div class="container-fluid">
+      <!--<div class="invitedBy">
+          
+        </div>-->
+        <div class="row">
+          <div class="col-md-5">
+		  	<p class="headertxt">Get your place in your friends ScrapBook!!!</p>
+            <form>
+		
+              <div class="form-group">
+                <label for="usr" class="lbl">Your Name:</label>
+                <input type="text" class="form-control" id="nick" placeholder="or your nickname" required />
+              </div>
+              <div class="form-group">
+                <label for="message" class="lbl">Message:</label>
+                <textarea 
+                  class="form-control"
+                  rows="5"
+                  id="msg"
+                  required maxlength="400" placeholder="Relive memories you had together"
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="img" class="lbl">Upload an image(preferably both of you together):</label>
+                <input type="file" class="form-control " id="img"  onchange="readURL(this)" />
+              </div>
+              <div class="form-group">
+                <input  type="button" class="form-control btn-success" id="btn" value="Submit" onclick="datastore()"/>
+              </div>
+             
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container-fluid">
+        <div class="row1">
+          <p id="copyrighttxt">
+            Copyright &copy; 2020 All rights reserved | Powered by :
+           <a href="https://www.linkedin.com/in/chiranjeeb-nayak-b6218b182/"> <span class="club">CHIRANJEEB NAYAK</span></a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+
+  
+  </body>
+  </div>
+  <script>
+    
+    var id;
+    var currentuser;
+    var image;
+   var imageName;
+    getId();
+
+    function getId()
+{ 
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+    
+     id=user.uid;
+     console.log("reply id= "+id);
+    // alert(id);
+  } else {
+    // No user is signed in.
+
+      }
+  });
+}
+
+   setTimeout(readData,3000);
+
+    function readData()
+{
+  
+  var database = firebase.database();
+                                                    database.ref('user/'+id).once('value', function(snapshot){
+                                                        if(snapshot.exists()){
+                                                        //  alert("hello");
+                                                          currentuser = snapshot.val().Name;
+                                                           console.log("Hello, "+currentuser);
+                                                           
+                                                        }
+                                                    });
+}
+
+
+
+  var favoritemovie= sessionStorage.getItem("favoriteMovie");
+  
+      console.log(favoritemovie+"==storeidd");
+
+
+      function datastore()
+{   
+  
+    var name=document.getElementById('nick').value;
+    var text=document.getElementById('msg').value;
+    var pic=document.getElementById('img').value;
+    if(name=="")
+    {
+      alert("*Please give a nick name to your friend :-)*");
+      return false;
+    }
+    else if(text=="")
+    {
+      alert("*Please write your message for your friend :-)*");
+      return false;
+    }
+    else if(pic=="")
+    {
+      alert("*Please give a photo of your to make it memories :-)*");
+      return false;
+    }
+    
+    const ref = firebase.database().ref();
+                         let fname= $("#nick").val();
+                         let fmsg=$("#msg").val();
+               
+                         var storageRef = firebase.storage().ref();
+                           storageRef.child(imageName).put(image).then(function(snapshot) {
+                            snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                           // console.log('File available at', downloadURL);
+                             // alert(favoritemovie);
+                           ref.child('user/' + favoritemovie + '/Message').push({
+                               Nick:fname,
+                               Message:fmsg,
+                               SenderName:currentuser,
+                               image:downloadURL
+ 
+                           }); 
+                          // alert("Message sent"); 
+                          window.location.href="thanks.html";
+
+                            });
+                              // alert(' file uploaded!');
+                              
+                              });
+
+}
+
+
+function readURL(input) {
+        if (input.files && input.files[0]) {
+            image = input.files[0];
+            imageName =randomNumber() ;
+          
+        }
+    }
+  function randomNumber() {
+  var x = Math.floor((Math.random() * 10000) + 1);
+  var y = Math.floor((Math.random() * 10000) + 1);
+  var z = Math.floor((Math.random() * 10000) + 1);
+ // document.getElementById("demo").innerHTML = x+''+y+''+z;
+  return x+''+y+''+z+'.jpg';
+}
+  
+  </script>
+
+</html>

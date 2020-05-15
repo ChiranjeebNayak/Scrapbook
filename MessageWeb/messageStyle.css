@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes|Lobster|Marck+Script|Pacifico|Satisfy&display=swap");
+
+
+ body{
+        background: url(./images/msgbg.jpg) top right no-repeat;
+		background-size: cover;
+		background-position: 100% top;
+		background-attachment: fixed;
+      }
+      #color{
+        color: white;
+        
+        font-size: 20px;
+        background-image:linear-gradient(to bottom,#dd2476,#ff512f);
+      }
+    
+/*-----Header------*/
+.main-container {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px; /* height of your footer */
+}
+nav {
+    background: #3f5c6c;
+    display: flex;
+    height: fit-content;
+    width: 100%;
+  }
+  nav img {
+     width: 50px;
+    height: 50px;
+
+  }
+  nav a {
+    display: block;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 600;
+    align-self: center;
+    padding-left: 3rem;
+  }
+  nav h1 {
+    display: block;
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 600;
+    align-self: center;
+    padding-left: 0.8rem;
+    
+  }
+  
+   .clublogo{
+    width: 46px;
+    height: 50px;
+  position: absolute;
+  right: 3px;
+	 color: #ff512f;
+  font-weight: 600;
+  letter-spacing: 3px;
+  }
+  
+/*-----Header End------*/
+
+/*-----Main---------*/
+.lbl{
+	color:#fff !important;
+	font-size: 0.8rem !important;
+}
+.form-control{
+	font-size:0.8rem!important;
+}
+main .container-fluid .row {
+	 
+    margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 84vh;
+}
+
+.invitedBy {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 3rem;
+  color: white;
+  font-family: "satisfy", Times, serif;
+}
+.col-md-5 {
+	background:#15768fde;
+  padding: 4rem 2rem;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius:  10px;
+}
+/*-----Main---------*/
+.headertxt{
+	color:white;
+	text-align:center;
+}
+/*-------Footer---------*/
+footer {
+  background: #262626;
+  text-align: center;
+  color: white;
+}
+
+footer .container-fluid .row {
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+.club {
+  color: #989494;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+/*-----X---footer-----X----*/
+
+footer {
+
+  background: #2c3e50;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  justify-content: center;
+  width: 100%;
+  font-size: 1rem;
+position: absolute;
+ bottom: 0;
+ width: 100%;
+}
+@media only screen and (max-width: 600px){
+	nav {
+    width:100%;
+  }
+
+  .clublogo{
+    width: 35px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+  }
+  nav img {
+    width: 40px;
+    height: 40px;
+   
+  }
+  nav h1{
+    padding-left: 1rem;
+	font-size:1rem;
+	padding-top:5px;
+  }
+  footer{
+	  margin-top:1rem;
+  }
+  .row{
+	  
+  }
+  .col-md-5{
+	  margin-top:1rem;
+	  padding: 1rem 2rem ;
+	  margin-left:16px;
+	  margin-right:16px;
+  }
+
+}
+
+
+
